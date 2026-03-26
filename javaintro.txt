@@ -1,0 +1,280 @@
+Introduction to JAVA:
+Object-Oriented Programming (OOP) Fundamentals
+OOP (Object-Oriented Programming) is a way of writing programs using objects and classes.
+Example:
+* Car → object
+* Student → object
+* Bank Account → object
+
+🔹 Key Concepts of OOP
+ 1. Class
+
+A class is a blueprint or template.
+ Example:
+`
+Class: Student
+Properties: name, age, marks
+ 2. Object
+
+An object is a real instance of a class.
+ Example:
+
+Student s1 = new Student();
+` 3. Encapsulation
+
+Wrapping data and methods into a single unit.
+
+ Protects data using private variables.
+
+ Example:
+
+private int age;
+
+public void setAge(int a) {
+    age = a;
+}
+ 4. Inheritance
+
+One class can reuse properties of another class.
+
+ Example:
+
+class Animal {
+   void eat() {}
+}
+
+class Dog extends Animal {
+   void bark() {}
+}
+ 5. Polymorphism
+
+Same method name → different behavior.
+ Example:
+
+void add(int a, int b) {}
+void add(int a, int b, int c) {}
+6. Abstraction
+
+Hiding internal details and showing only important features.
+ Example:
+ATM machine → you don’t know internal working
+ 💻 Structure of a Java Program
+🔹 Basic Structure
+
+class ClassName {
+
+    // Variables (Data members)
+    
+    // Methods (Functions)
+
+    public static void main(String[] args) {
+        // Execution starts here
+    }
+}
+ 🔹 Example Program
+class Student {
+
+    String name;
+    int age;
+
+    void display() {
+        System.out.println(name + " " + age);
+    }
+
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.name = "Latha";
+        s1.age = 20;
+        s1.display();
+    }
+}
+🔹 Explanation
+
+* `class Student` → defines a class
+* `String name, int age` → variables
+* `display()` → method
+* `main()` → starting point of program
+* `new Student()` → creates object
+Primitive data types:
+DataType	  Description
+byte	      Stores whole numbers from -128 to 127
+short	      Stores whole numbers from -32,768 to 32,767
+int	        Stores whole numbers from -2,147,483,648 to 2,147,483,647
+long	      Stores whole numbers from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+float	      Stores fractional numbers. Sufficient for storing 6 to 7 decimal digits
+double	    Stores fractional numbers. Sufficient for storing 15 to 16 decimal digits
+boolean	    Stores true or false values
+char	      Stores a single character/letter or ASCII values
+
+byte age = 25;
+byte temperature = -10;
+short salary=20000;
+  
+Reference Data Types:(non-primitive data types)
+  String
+  Array
+  Classes
+  Interface
+Keywords, Identifiers, Expressions
+  Keywords are reserved words in java and they have special meaning
+  int, class, public, static, void, if, else, return, new
+  
+  Identifiers are names given to variables, methods, classes, etc.
+✅ Can contain letters, digits, _ , $
+✅ Must start with letter, _ or $
+❌ Cannot start with number
+❌ Cannot use keywords
+int age;        // valid
+String name;    // valid
+int 1value;     // invalid
+int class;      // invalid
+Class → PascalCase → StudentData
+Variable → camelCase → studentName
+  
+An expression is a combination of variables, values, and operators that produces a result.
+int sum = 10 + 20;        // arithmetic expression
+int result = a * b;       // variable expression
+boolean check = (a > b);  // relational expression
+Types of Expressions
+Arithmetic → + - * / %
+Relational → >, <, ==
+Logical → &&, ||, !
+Assignment → =
+
+Operators:
+Arithmetic Operators
+Assignment Operators
+Logical Operators
+Relational Operators
+Bitwise Operators
+Arithmetic Operators:
++	Addition	     Adds together two values	           x + y	
+-	Subtraction	   Subtracts one value from another	   x - y	
+*	Multiplication	Multiplies two values             	x * y	
+/	Division	    Divides one value by another	       x / y	
+%	Modulus	      Returns the division remainder	     x % y	
+++	Increment	Increases the value of a variable by 1	++x	
+--	Decrement	Decreases the value of a variable by 1	--x
+
+int x = 10;
+int y = 3;
+System.out.println(x + y); // 13
+System.out.println(x - y); // 7
+System.out.println(x * y); // 30
+System.out.println(x / y); // 3
+System.out.println(x % y); // 1
+int z = 5;
+++z;
+System.out.println(z); // 6
+--z;
+System.out.println(z); // 5
+
+Assignment Operators:
+=  	x = 5	  x = 5	
++=	x += 3	x = x + 3	
+-=	x -= 3	x = x - 3	
+*=	x *= 3	x = x * 3	
+/=	x /= 3	x = x / 3	
+%=	x %= 3	x = x % 3
+
+Logical operators:
+&& 	Logical and	Returns true if both statements are true	            x < 5 &&  x < 10	
+|| 	Logical or	Returns true if one of the statements is true	        x < 5 || x < 4	
+!	Logical not	Reverse the result, returns false if the result is true	!(x < 5 && x < 10)
+
+  Relational operators:
+==	Equal to	          x == y	
+!=	Not equal	          x != y	
+>	Greater than	        x > y	
+<	Less than            	x < y	
+>=	Greater than or equal to	x >= y	
+<=	Less than or equal to	x <= y
+
+Bitwise operators
+| Operator | Name                 |
+| -------- | -------------------- |
+| &        | AND                  |
+| |        | OR                   |
+| ^        | XOR                  |
+| ~        | NOT                  |
+| <<       | Left Shift           |
+| >>       | Right Shift          |
+| >>>      | Unsigned Right Shift |
+Convert 5 to Bitwise
+| Step | Division | Quotient | Remainder |
+| ---- | -------- | -------- | --------- |
+| 1    | 5 ÷ 2    | 2        | 1         |
+| 2    | 2 ÷ 2    | 1        | 0         |
+| 3    | 1 ÷ 2    | 0        | 1         |
+Bitwise:101
+Convert 10 to Bitwise:
+| Step | Division | Quotient | Remainder |
+| ---- | -------- | -------- | --------- |
+| 1    | 10 ÷ 2   | 5        | 0         |
+| 2    | 5 ÷ 2    | 2        | 1         |
+| 3    | 2 ÷ 2    | 1        | 0         |
+| 4    | 1 ÷ 2    | 0        | 1         |
+Bitwise:0101
+  (1 × 2³) + (0 × 2²) + (1 × 2¹) + (0 × 2⁰)
+= 8 + 0 + 2 + 0
+= 10
+| Decimal | Binary |
+| ------- | ------ |
+| 1       | 1      |
+| 2       | 10     |
+| 3       | 11     |
+| 4       | 100    |
+| 5       | 101    |
+| 6       | 110    |
+| 7       | 111    |
+| 8       | 1000   |
+5 = 0101
+3 = 0011
+-----------
+    0001  = 1
+AND(&):
+Rule:
+1 & 1 = 1
+Otherwise = 0
+int a = 5;   // 0101
+int b = 3;   // 0011
+
+int result = a & b;  // 0001 = 1
+System.out.println(result);
+
+OR (|):
+5 = 0101
+3 = 0011
+-----------
+    0111  = 1
+Rule:
+If any bit is 1 → result is 1
+int result = 5 | 3;   // 0111 = 7
+
+XOR (^):
+5 = 0101
+3 = 0011
+-----------
+    0110  = 6
+Rule:
+Same → 0
+Different → 1
+int result = 5 ^ 3;   // 0110 = 6
+
+NOT(`)
+  Flips all bits
+  1 → 0
+  0 → 1 
+  ~n = -(n + 1)
+  `5 = -(5+1)=-6
+  `10 = -11
+Left Shift (<<)
+ Shifts bits to left (adds zeros on right)  
+  int result = 5 << 1;   // 1010 = 10
+
+Right Shift (>>)
+Shifts bits to right
+  int result = 8 >> 1;   // 0100 = 4
+
+Unsigned Right Shift (>>>)
+ Shifts right and fills with 0 (ignores sign)
