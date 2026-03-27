@@ -1,0 +1,299 @@
+Variables
+A variable is a container used to store data.
+Types of Variables:
+Local Variable – inside method
+Instance Variable – inside class, outside method
+Static Variable – shared across all objects
+class Demo {
+    int a = 10;          // instance variable
+    static int b = 20;   // static variable
+
+    void show() {
+        int c = 30;      // local variable
+        System.out.println(a + " " + b + " " + c);
+    }
+}
+
+Methods
+A method is a block of code that performs an action.
+
+Types:
+Instance method:
+class Demo {
+    // instance method
+    void show() {
+        System.out.println("This is an instance method");
+    }
+    public static void main(String[] args) {
+        // creating object
+        Demo obj = new Demo();
+        // calling instance method
+        obj.show();
+    }
+}
+Static method
+class Demo {
+    // static method
+    static void display() {
+        System.out.println("This is a static method");
+    }
+
+    public static void main(String[] args) {
+        // calling static method directly using class name
+        Demo.display();
+    }
+}
+| Static Method           | Instance Method               |
+| ----------------------- | ----------------------------- |
+| Belongs to class        | Belongs to object             |
+| No object needed        | Object required               |
+| Access only static data | Access both static & instance |
+| Called using class name | Called using object           |
+
+Object
+An object is an instance of a class.
+class Car {
+    void drive() {
+        System.out.println("Driving...");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Car c = new Car();  // object creation
+        c.drive();
+    }
+}
+Reference
+A reference is the address pointing to an object.
+Car c = new Car();
+c → reference
+new Car() → object
+
+Reference Variables
+Variables that store object references, not actual data.
+Car c1 = new Car();
+Changing via c2 affects c1
+Car c2 = c1;   // both refer to same object
+
+Constructors:
+Pass by Value (Primitive Data Types)
+ A copy of the actual value is passed
+ Changes inside method DO NOT affect original variable
+  class Test {
+    static void modify(int x) {
+        x = x + 10;
+        System.out.println("Inside method: " + x);
+    }
+
+    public static void main(String[] args) {
+        int a = 5;
+        modify(a);
+        System.out.println("Outside method: " + a);
+    }
+}
+Output:
+Inside method: 15
+Outside method: 5
+  
+Pass By Reference:
+It passes a copy of reference
+You can modify object data
+But you cannot change the reference itself
+  class Test {
+    int value;
+    static void modify(Test obj) {
+        obj.value = 100;
+    }
+    public static void main(String[] args) {
+        Test t = new Test();
+        t.value = 10;
+        modify(t);
+        System.out.println(t.value);
+    }
+}
+Output:
+100
+
+class Test {
+    int value;
+    static void change(Test obj) {
+        obj = new Test();   // new object created
+        obj.value = 200;
+    }
+    public static void main(String[] args) {
+        Test t = new Test();
+        t.value = 10;
+        change(t);
+        System.out.println(t.value);
+    }
+}
+Output:
+10
+
+Access Specifiers:
+public	The class is accessible by any other class
+private	The code is only accessible within the declared class
+protected	The code is accessible in the same package and subclasses.
+default	The code is only accessible in the same package.
+Access levels:
+class Demo {
+    private int a = 10;
+    int b = 20; // default
+    protected int c = 30;
+    public int d = 40;
+}
+
+Decision Making and Control Structures:
+Use if 
+  to specify a block of code to be executed, if a specified condition is true
+Use else
+  to specify a block of code to be executed, if the same condition is false
+Use else if
+  to specify a new condition to test, if the first condition is false
+Use switch 
+  to specify many alternative blocks of code to be executed
+  Example:
+int age = 18;
+if(age >= 18) {
+    System.out.println("Eligible to vote");
+} else {
+    System.out.println("Not Eligible");
+}
+
+int weather = 2; // 1 = raining, 2 = sunny, 3 = cloudy
+if (weather == 1) {
+  System.out.println("Bring an umbrella.");
+} else if (weather == 2) {
+  System.out.println("Wear sunglasses.");
+} else {
+  System.out.println("Just go outside normally.");
+}
+Output:
+"Wear sunglasses."
+
+Ternary operator:
+int time = 20;
+if (time < 18) {
+  System.out.println("Good day.");
+} else {
+  System.out.println("Good evening.");
+}
+
+int time = 20;
+variable = (condition) ? expressionTrue :  expressionFalse;
+String result = (time < 18) ? "Good day." : "Good evening.";
+System.out.println(result);
+
+Switch:
+int day = 4;
+switch (day) {
+  case 1:
+    System.out.println("Monday");
+    break;
+  case 2:
+    System.out.println("Tuesday");
+    break;
+  case 3:
+    System.out.println("Wednesday");
+    break;
+  case 4:
+    System.out.println("Thursday");
+    break;
+  case 5:
+    System.out.println("Friday");
+    break;
+  case 6:
+    System.out.println("Saturday");
+    break;
+  case 7:
+    System.out.println("Sunday");
+    break;
+
+while loop:
+while loop repeats a block of code as long as the specified condition is true:
+    int countdown = 3;
+while (countdown > 0) {
+  System.out.println(countdown);
+  countdown--;
+}
+System.out.println("Happy New Year!!");
+Output:
+3
+2
+1
+Happy New Year!!
+  
+Do/while loop:
+The do/while loop is a variant of the while loop.
+This loop will execute the code block once, before checking if the condition is true. 
+Then it will repeat the loop as long as the condition is true.
+  int i = 0;
+do {
+  System.out.println(i);
+  i++;
+}
+while (i < 5);
+Output:
+0
+1
+2
+3
+4
+
+For loop:
+Statement 1 is executed (one time) before the execution of the code block.
+Statement 2 defines the condition for executing the code block.
+Statement 3 is executed (every time) after the code block has been executed.
+ public class Main {
+  public static void main(String[] args) {
+    for (int i = 0; i < 5; i++) {
+      System.out.println(i);
+    }  
+  }
+}
+
+Output:
+0
+1
+2
+3
+4
+
+String
+Immutable (cannot be changed once created)
+class Test {
+    public static void main(String[] args) {
+        String s = "Hello";
+        s.concat(" World");
+        System.out.println(s);
+    }
+}
+output:Hello
+StringBuffer:
+Mutable (can be changed)
+  class Test {
+    public static void main(String[] args) {
+        StringBuffer sb = new StringBuffer("Hello");
+        sb.append(" World");
+        System.out.println(sb);
+    }
+}
+Output:
+Hello World
+String Builder:
+class Test {
+    public static void main(String[] args) {
+        StringBuilder sb = new StringBuilder("Hello");
+        sb.append(" World");
+        System.out.println(sb);
+    }
+}
+Output:
+Hello World
+| Feature     | String                     | StringBuffer | StringBuilder |
+| ----------- | -------------------------- | ------------ | ------------- |
+| Mutability  | ❌ Immutable               | ✅ Mutable    | ✅ Mutable  |
+| Thread-safe | ❌ No                      | ✅ Yes        | ❌ No       |
+| Performance | Slow (new object)          | Medium       | Fast          |
+| Memory      | More (creates new objects) | Less         | Less          |
+| Use case    | Fixed data                 | Multi-thread | Single-thread |
